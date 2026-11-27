@@ -1,3 +1,5 @@
+#![allow(clippy::useless_conversion)]
+
 pub mod distance;
 
 use distance::{fuzzy_ratio, jaro_winkler_similarity, levenshtein_distance, parallel_fuzzy_search};

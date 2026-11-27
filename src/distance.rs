@@ -68,7 +68,7 @@ pub fn jaro_winkler_similarity(s1: &str, s2: &str) -> f64 {
     let mut matches = 0;
 
     for i in 0..len1 {
-        let start = if i >= match_window { i - match_window } else { 0 };
+        let start = i.saturating_sub(match_window);
         let end = min(i + match_window + 1, len2);
 
         for j in start..end {
